@@ -45,7 +45,6 @@ The `docker-compose.yml` file defines two services:
 - **Username**: root
 - **Password**: example
 
-You can change the credentials by modifying the `.env` file and restarting the services.
 
 ## Ports
 
