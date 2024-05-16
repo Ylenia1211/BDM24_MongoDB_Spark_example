@@ -57,7 +57,6 @@ The `docker-compose.yml` file defines two services:
 
 
 
-## Notes to use **src/main/java/MongoCRUDExample.java**
 # MongoDB CRUD Operations Example
 [Link to MongoCRUDExample.java](src/main/java/MongoCRUDExample.java)
 
