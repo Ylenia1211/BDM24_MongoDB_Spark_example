@@ -1,4 +1,5 @@
 # MongoDB and mongo-express Docker Compose Setup
+![Docker](https://media.licdn.com/dms/image/C5612AQENOC_bFx1Scg/article-cover_image-shrink_600_2000/0/1599320945318?e=2147483647&v=beta&t=Hj5K3tLMhvguYziWrDZ-ckB-zceTHkBSxLNBKr1LqaY)
 
 This repository contains a Docker Compose configuration to quickly set up a MongoDB instance and mongo-express, a web-based MongoDB admin interface. 
 
@@ -69,7 +70,7 @@ Make sure you have the MongoDB Java driver added to your project dependencies.
 
   # Spark MongoDB Connector Example
 [Link to SparkMongoDBExample.java](src/main/java/SparkMongoDBExample.java)
-
+![spark](https://helptechcommunity.files.wordpress.com/2020/02/mongo.png)
 This Java program demonstrates how to use the Apache Spark MongoDB Connector to interact with MongoDB data in a Spark application.
 
 ## Prerequisites
