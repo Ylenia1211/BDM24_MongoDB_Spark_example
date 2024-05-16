@@ -59,6 +59,7 @@ The `docker-compose.yml` file defines two services:
 
 ## Notes to use **src/main/java/MongoCRUDExample.java**
 # MongoDB CRUD Operations Example
+[Link to MongoCRUDExample.java](src/main/java/MongoCRUDExample.java)
 
 This Java program demonstrates basic CRUD (Create, Read, Update, Delete) operations using the MongoDB Java driver.
 
@@ -68,6 +69,7 @@ Make sure you have the MongoDB Java driver added to your project dependencies.
 - Customize the connection string (`uri`) according to your MongoDB setup.
 
   # Spark MongoDB Connector Example
+[Link to SparkMongoDBExample.java](src/main/java/SparkMongoDBExample.java)
 
 This Java program demonstrates how to use the Apache Spark MongoDB Connector to interact with MongoDB data in a Spark application.
 
