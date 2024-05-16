@@ -55,3 +55,85 @@ You can change the credentials by modifying the `.env` file and restarting the s
 
 - This setup is intended for development and testing purposes. Make sure to secure your MongoDB instance appropriately before deploying it in a production environment.
 - Ensure that the provided credentials are strong and not used in production environments without proper security measures.
+
+
+
+## Notes to use **src/main/java/MongoCRUDExample.java**
+# MongoDB CRUD Operations Example
+
+This Java program demonstrates basic CRUD (Create, Read, Update, Delete) operations using the MongoDB Java driver.
+
+Make sure you have the MongoDB Java driver added to your project dependencies.
+
+- Make sure your MongoDB instance is running and accessible.
+- Customize the connection string (`uri`) according to your MongoDB setup.
+
+  # Spark MongoDB Connector Example
+
+This Java program demonstrates how to use the Apache Spark MongoDB Connector to interact with MongoDB data in a Spark application.
+
+## Prerequisites
+
+Ensure you have Apache Spark installed and configured on your system. Also, make sure you have the MongoDB Java driver and the Spark MongoDB Connector added to your project dependencies.
+
+## Usage
+
+1. Import necessary libraries:
+
+    ```java
+    import org.apache.spark.api.java.JavaRDD;
+    import org.apache.spark.api.java.JavaSparkContext;
+    import org.apache.spark.sql.SparkSession;
+    import org.bson.Document;
+    import com.mongodb.spark.MongoSpark;
+    ```
+
+2. Define the main class `SparkMongoDBExample` and its `main` method.
+
+3. Inside the `main` method, create a Spark session:
+
+    ```java
+    SparkSession spark = SparkSession.builder()
+        .appName("MongoDBSparkConnectorExample")
+        .master("local[*]")  // Set the master URL
+        .config("spark.mongodb.input.uri","mongodb://root:example@localhost:27017/db_spark.collection1?authSource=admin")
+        .config("spark.mongodb.output.uri", "mongodb://root:example@localhost:27017/db_spark.collection1?authSource=admin")
+        .config("spark.jars.packages", "org.mongodb.spark:mongo-spark-connector_2.12:10.0.0")
+        .getOrCreate();
+    ```
+
+    - Customize the connection URI according to your MongoDB setup.
+
+4. Create a Spark context:
+
+    ```java
+    JavaSparkContext jsc = new JavaSparkContext(spark.sparkContext());
+    ```
+
+5. Read data from MongoDB collection:
+
+    ```java
+    JavaRDD<Document> rdd = MongoSpark.load(jsc);
+    ```
+
+6. Perform operations on the data, for example, displaying the first 10 documents and counting the total number of documents:
+
+    ```java
+    rdd.take(10).forEach(System.out::println);
+    long count = rdd.count();
+    System.out.println("Number of documents in the collection: " + count);
+    ```
+
+7. Close the Spark session and context:
+
+    ```java
+    jsc.close();
+    spark.stop();
+    ```
+
+## Notes
+
+- Ensure your MongoDB instance is running and accessible.
+- Customize the connection URI (`spark.mongodb.input.uri` and `spark.mongodb.output.uri`) according to your MongoDB setup.
+- Replace `db_spark` with the name of your database and `collection1` with the name of your collection.
+- This example assumes a local Spark setup (`master("local[*]")`). Adjust the master URL accordingly for a cluster setup.
