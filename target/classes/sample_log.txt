@@ -1,0 +1,7 @@
+2024-05-06 12:34:56 INFO - Application started
+2024-05-06 12:35:00 ERROR - Database connection failed
+2024-05-06 12:35:02 ERROR - Unable to process request
+2024-05-06 12:35:05 INFO - Application stopped
+2024-05-06 12:35:10 DEBUG - Debugging information
+2024-05-06 12:35:15 ERROR - Disk space full
+2024-05-06 12:35:20 INFO - Application restarted
