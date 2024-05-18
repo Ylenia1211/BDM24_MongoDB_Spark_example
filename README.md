@@ -41,6 +41,8 @@ The `docker-compose.yml` file defines two services:
 - **mongo**: MongoDB instance with the specified root credentials.
 - **mongo-express**: Web-based MongoDB admin interface connected to the MongoDB instance.
 
+  https://hub.docker.com/_/mongo
+
 ## Credentials
 
 - **Username**: root
